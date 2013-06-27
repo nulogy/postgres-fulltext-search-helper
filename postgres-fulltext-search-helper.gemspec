@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Postgres::Fulltext::Search::Helper::VERSION
   gem.authors       = ["Justin Fitzsimmons", "Arturo Pie"]
   gem.email         = ["justinf@nulogy.com", "arturop@nulogy.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.description   = %q{Use postgres' fulltext search with ease}
+  gem.summary       = ""
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
