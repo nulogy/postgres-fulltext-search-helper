@@ -23,7 +23,7 @@ describe PostgresFulltextSearchHelper do
   it "adds a filter to a activerecord-style scope" do
     scope = stub("scope").as_null_object
 
-    scope.should_receive(:where).with("to_tsvector('simple', name::text) @@ to_tsquery('simple', ?))", ["hello:* & world:*"])
+    scope.should_receive(:where).with("to_tsvector('simple', name::text) @@ to_tsquery('simple', ?)", ["hello:* & world:*"])
 
     Helper.search(scope, "name", "hello world")
   end
