@@ -24,7 +24,9 @@ Or install it yourself as:
 
 If you're using Active Record or another library that implements ```where``` on a scope in a similar manner to Active Record, you can pass the relevant scope, field name, and query into the ```search``` method, like this:
 
-    scope
+```ruby
+filtered_scope = PostgresFulltextSearchHelper.search(scope, "name", "jus fit")
+```
 
 ## Contributing
 
