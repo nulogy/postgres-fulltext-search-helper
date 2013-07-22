@@ -7,7 +7,7 @@ module PostgresFulltextSearchHelper
 
   def format_query_for_fulltext(query)
     parts = query.split(POSTGRES_TSQUERY_SENSITIVE_CHARACTERS).delete_if{|x| x.strip.empty? }
-    return parts.map{|token| token + ':*'}.join(' & ')
+    return parts.map{|token| "(#{token}:* | -#{token}:*)" }.join(' & ')
   end
 
   def search(scope, field_name, query)
