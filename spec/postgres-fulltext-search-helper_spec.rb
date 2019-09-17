@@ -16,14 +16,14 @@ describe PostgresFulltextSearchHelper do
   end
 
   it "handles sensitive characters" do
-    query = "*:hello &(world)!|"
+    query = "*:hello <>&(world)!|"
     expect(Helper.format_query_for_fulltext(query)).to eq("(hello:* | -hello:*) & (world:* | -world:*)")
   end
 
   it "adds a filter to a activerecord-style scope" do
-    scope = stub("scope").as_null_object
+    scope = double("scope")
 
-    scope.should_receive(:where).with("to_tsvector('simple', name::text) @@ to_tsquery('simple', ?)", ["(hello:* | -hello:*) & (world:* | -world:*)"])
+    expect(scope).to receive(:where).with("to_tsvector('simple', name::text) @@ to_tsquery('simple', ?)", ["(hello:* | -hello:*) & (world:* | -world:*)"])
 
     Helper.search(scope, "name", "hello world")
   end
