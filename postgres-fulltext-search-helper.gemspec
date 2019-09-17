@@ -6,8 +6,8 @@ require 'postgres-fulltext-search-helper/version'
 Gem::Specification.new do |gem|
   gem.name          = "postgres-fulltext-search-helper"
   gem.version       = Postgres::Fulltext::Search::Helper::VERSION
-  gem.authors       = ["Justin Fitzsimmons", "Arturo Pie"]
-  gem.email         = ["justinf@nulogy.com", "arturop@nulogy.com"]
+  gem.authors       = ["Justin Fitzsimmons", "Arturo Pie", "Shahriyar Nasir"]
+  gem.email         = ["justinf@nulogy.com", "arturop@nulogy.com", "shahn@nulogy.com"]
   gem.description   = %q{Use postgres' fulltext search with ease}
   gem.summary       = ""
   gem.homepage      = ""
